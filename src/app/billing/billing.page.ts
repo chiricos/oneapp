@@ -8,17 +8,20 @@ import { BillingService } from '../service/billing.service';
 })
 export class BillingPage implements OnInit {
 
-  private data;
-  private config;
+  data:any[] = [];
 
   constructor(private billingService:BillingService) {
   }
 
   ngOnInit() {
-  }
-
-  activar() {
-    console.log(this.billingService.getBilling());
+    console.log('init')
+    this.data = this.billingService.getBalance()
+      .subscribe( data => {
+        console.log('subscribe');
+        console.log(data.data.dueAmount.label);
+        this.data = data.data.dueAmount.label;
+      });
+      console.log('ultimo init');
   }
 
 }

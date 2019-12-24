@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +8,23 @@ import { map } from 'rxjs/operators';
 export class BillingService {
 
   prueba:string = "prueba";
+  data:any[] = [];
 
   constructor(private http: HttpClient) { }
 
-  private urlBilling: string = `https://tigoselfcareregional-stg-ni.tigocloud.net/api/v2.0/home/billing/billingaccount/2870/balance`;
+  private urlBilling: string = `https://tigoselfcareregional-stg-ni.tigocloud.net/api/v2.0/home/billing/billingaccounts/2870/balance`;
 
-  getBilling() {
-    this.http.get(this.urlBilling).toPromise()
-      .then(data => {
-        return data.data;
-      });
+  getBalance() {
+    return this.http.get(this.urlBilling);
+  }
+
+  getMessages() {
+    return this.http.get(`https://jsonplaceholder.typicode.com/posts`)
+      .pipe( tap( console.log ) );
+      /*.pipe(
+        tap( posts => {
+          console.log(posts);
+        })
+      );*/
   }
 }

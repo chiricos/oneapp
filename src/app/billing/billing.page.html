@@ -10,8 +10,11 @@
       <ion-card-title>Saldos</ion-card-title>
     </ion-card-header>
     <ion-card-content >
-        <ion-button color="primary" (click)="activar()">activar</ion-button>
-      {{data}}
+        <ion-list>
+          <ion-item >
+            <ion-label>{{data}}</ion-label>
+          </ion-item>
+        </ion-list>
     </ion-card-content>
   </ion-card>
 </ion-content>

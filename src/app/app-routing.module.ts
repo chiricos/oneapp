@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'saldo',
     loadChildren: () => import('./billing/billing.module').then( m => m.BillingPageModule)
   },
+  {
+    path: 'mensajes',
+    loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule)
+  },
 ];
 
 @NgModule({
