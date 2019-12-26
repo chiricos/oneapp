@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'mensajes',
     loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule)
   },
+  {
+    path: 'historial',
+    loadChildren: () => import('./invoices/invoices.module').then( m => m.InvoicesPageModule)
+  },
 ];
 
 @NgModule({

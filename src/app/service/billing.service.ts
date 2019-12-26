@@ -17,6 +17,10 @@ export class BillingService {
     return this.http.get(`${this.urlBilling}/${this.billingaccounts}/balance`);
   }
 
+  getInvoices() {
+    return this.http.get(`${this.urlBilling}/${this.billingaccounts}/invoices`);
+  }
+
   getMessages() {
     return this.http.get(`https://jsonplaceholder.typicode.com/posts`)
       .pipe( tap( console.log ) );
