@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BillingService } from '../service/billing.service';
+import { iBalance } from '../model/iBalance.interface';
 
 @Component({
   selector: 'app-billing',
@@ -9,19 +10,41 @@ import { BillingService } from '../service/billing.service';
 export class BillingPage implements OnInit {
 
   data:any[] = [];
+  response:any[] = [];
 
   constructor(private billingService:BillingService) {
   }
 
   ngOnInit() {
-    console.log('init')
-    this.data = this.billingService.getBalance()
-      .subscribe( data => {
-        console.log('subscribe');
-        console.log(data.data.dueAmount.label);
-        this.data = data.data.dueAmount.label;
+    this.billingService.getBalance()
+      .subscribe( (balance:any) => {
+        this.data = balance;
+        if (typeof balance === 'object') {
+          for (let key of Object.keys(balance.data)) {
+            var data = balance.data[key];
+            //console.log(key);
+            //console.log(data);
+            this.response.push(data);
+          }
+        }
       });
-      console.log('ultimo init');
+     
+  }
+
+  convertArray(value) {
+    let result:any[] = [];
+    if(typeof(value) !== 'undefined'){
+      Object.keys(value).map(function(valueIndex){
+        let data = value[valueIndex];
+        //console.log(data);
+        result.push(data);
+      });
+    }
+    return result;
+  }
+
+  imprimir(value) {
+    console.log(value)
   }
 
 }

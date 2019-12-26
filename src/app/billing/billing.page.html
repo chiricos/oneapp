@@ -7,12 +7,14 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Saldos</ion-card-title>
+      <ion-card-title></ion-card-title>
     </ion-card-header>
     <ion-card-content >
-        <ion-list>
-          <ion-item >
-            <ion-label>{{data}}</ion-label>
+        <ion-list *ngFor="let item of convertArray(data.data)">
+          {{imprimir(item)}}
+          <ion-item *ngIf="item.length !== 0">
+            <ion-label *ngIf="item.formattedValue">{{item.label}}: {{item.formattedValue}}</ion-label>
+            <ion-label *ngIf="item.value && !item.formattedValue">{{item.label}}: {{item.value}}</ion-label>
           </ion-item>
         </ion-list>
     </ion-card-content>
