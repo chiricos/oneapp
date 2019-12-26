@@ -9,7 +9,6 @@ import { BillingService } from '../service/billing.service';
 export class BillingPage implements OnInit {
 
   balance:any[] = [];
-  invoices:any[] = [];
 
   constructor(private billingService:BillingService) {
   }
@@ -19,23 +18,12 @@ export class BillingPage implements OnInit {
       .subscribe( (result:any) => {
         this.balance = result;
       });
-
-    this.billingService.getInvoices()
-      .subscribe( (result:any) => {
-        this.invoices = result;
-      });
-     
   }
 
-  convertArray(value) {
-    let result:any[] = [];
-    if(typeof(value) !== 'undefined'){
-      Object.keys(value).map(function(valueIndex){
-        let data = value[valueIndex];
-        result.push(data);
-      });
+  convertToArray(value) {
+    if(typeof(value) !== 'undefined') {
+      return this.billingService.getConvertToArray(value);
     }
-    return result;
   }
 
   imprimir(value) {

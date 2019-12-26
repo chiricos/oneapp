@@ -30,4 +30,13 @@ export class BillingService {
         })
       );*/
   }
+
+  getConvertToArray(value) {
+    let result:any[] = [];
+    Object.keys(value).map(function(valueIndex){
+      let data = value[valueIndex];
+      result.push(data);
+    });
+    return result;
+  }
 }

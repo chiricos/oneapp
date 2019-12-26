@@ -3,10 +3,23 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>invoices</ion-title>
+    <ion-title>Facturación</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Historial</ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+        <ion-list *ngFor="let row of rows">
+          
+          <ion-item  *ngFor="let invoice of this.convertToArray(invoices[0].rows[row]); let i = index" >
+            <ion-label *ngIf="headers[i].show && invoice.formattedValue">{{headers[i].label}}: {{invoice.formattedValue}}</ion-label>
+            <ion-label *ngIf="headers[i].show && !invoice.formattedValue">{{headers[i].label}}: {{invoice.value}}</ion-label>
+          </ion-item>
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
