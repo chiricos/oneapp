@@ -9,6 +9,7 @@ import { BillingService } from '../service/billing.service';
 export class BillingPage implements OnInit {
 
   balance:any[] = [];
+  config:any[] = [];
 
   constructor(private billingService:BillingService) {
   }
@@ -27,7 +28,16 @@ export class BillingPage implements OnInit {
   }
 
   imprimir(value) {
-    console.log(value);
+    if (typeof(value['pdf_url']) !== 'undefined'){
+      console.log(value['pdf_url'].url);
+    }
+  }
+
+  getUrl(value) {
+    if (typeof(value['pdf_url']) !== 'undefined'){
+      window.open('https://tigoselfcareregional-stg-ni.tigocloud.net'+value['pdf_url'].url,'_system', 'location=yes');
+      return value['pdf_url'].url;
+    }
   }
 
 }
