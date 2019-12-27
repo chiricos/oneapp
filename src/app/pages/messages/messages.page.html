@@ -1,0 +1,10 @@
+<app-header titulo="mensajes"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let message of messages | async">
+      <ion-label>{{message.title}}</ion-label>
+      <ion-label>{{message.body}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

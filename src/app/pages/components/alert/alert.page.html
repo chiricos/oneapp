@@ -1,0 +1,47 @@
+<app-header [titulo]="title" redirectTo="/componente/inicio"></app-header>
+
+<ion-content>
+
+  <ion-button color="primary"
+              expand="full"
+              (click)="presentAlert()">
+    ALERT
+  </ion-button>
+
+  <ion-button color="primary"
+              expand="full"
+              (click)="presentAlertMultipleButtons()">
+    Alert multiple
+  </ion-button>
+
+  <ion-button color="primary"
+              expand="full"
+              (click)="presentAlertConfirm()">
+    Alert confirm
+  </ion-button>
+
+  <ion-button color="primary"
+              expand="full"
+              (click)="presentAlertPrompt()">
+    Alert promt
+  </ion-button>
+
+  <ion-button color="primary"
+              expand="full"
+              (click)="presentAlertRadio()">
+    Alert radio
+  </ion-button>
+
+  <ion-button color="primary"
+              expand="full"
+              (click)="presentAlertCheckbox()">
+    Alert checkbox
+  </ion-button>
+
+  <ion-button color="secondary"
+              expand="full"
+              (click)="presentAlertWork()">
+    Poner título
+  </ion-button>
+
+</ion-content>

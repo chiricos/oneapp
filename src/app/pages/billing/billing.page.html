@@ -1,0 +1,20 @@
+<app-header titulo="facturación"></app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Saldos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+        <ion-list *ngFor="let item of convertToArray(balance.data)">
+          <ion-item *ngIf="item.length !== 0 && item.show">
+            <ion-label *ngIf="item.formattedValue">{{item.label}}: {{item.formattedValue}}</ion-label>
+            <ion-label *ngIf="item.value && !item.formattedValue">{{item.label}}: {{item.value}}</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngFor="let config of convertToArray(balance.config)">
+            <ion-button color="secondary" (click)='getUrl(config);'>Descargar</ion-button>
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

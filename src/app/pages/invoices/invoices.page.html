@@ -1,0 +1,17 @@
+<app-header titulo="facturación"></app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Historial</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngFor="let row of rows">
+        <ion-list *ngFor="let invoice of convertToArray(invoices[0].rows[row]); let i = index">
+          <ion-item  *ngIf="invoice.show">
+            <ion-label *ngIf="headers[i].show && invoice.formattedValue">{{headers[i].label}}: {{invoice.formattedValue}}</ion-label>
+            <ion-label *ngIf="headers[i].show && !invoice.formattedValue">{{headers[i].label}}: {{invoice.value}}</ion-label>
+          </ion-item>
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
