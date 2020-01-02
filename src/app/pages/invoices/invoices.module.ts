@@ -8,6 +8,7 @@ import { InvoicesPageRoutingModule } from './invoices-routing.module';
 
 import { InvoicesPage } from './invoices.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     InvoicesPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ],
   declarations: [InvoicesPage]
 })

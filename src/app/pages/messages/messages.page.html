@@ -2,9 +2,16 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let message of messages | async">
-      <ion-label>{{message.title}}</ion-label>
-      <ion-label>{{message.body}}</ion-label>
-    </ion-item>
+
+    <ion-card *ngFor="let message of messages | async">
+      <ion-card-header>
+        <ion-card-subtitle>{{message.title}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{message.body}}
+      </ion-card-content>
+    </ion-card>
+
   </ion-list>
 </ion-content>

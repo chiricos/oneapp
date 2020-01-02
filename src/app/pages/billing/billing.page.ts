@@ -18,6 +18,9 @@ export class BillingPage implements OnInit {
     this.billingService.getBalance()
       .subscribe( (result:any) => {
         this.balance = result;
+        if (typeof(result.config.actions) !== 'undefined'){
+          this.config = this.convertToArray(result.config.actions); 
+        }
       });
   }
 
@@ -28,9 +31,7 @@ export class BillingPage implements OnInit {
   }
 
   imprimir(value) {
-    if (typeof(value['pdf_url']) !== 'undefined'){
-      console.log(value['pdf_url'].url);
-    }
+    console.log(value);
   }
 
   getUrl(value) {

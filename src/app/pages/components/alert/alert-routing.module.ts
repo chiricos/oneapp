@@ -13,9 +13,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [
-    RouterModule,
-    ComponentsModule
-  ],
+  exports: [RouterModule],
 })
 export class AlertPageRoutingModule {}

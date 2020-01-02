@@ -4,6 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
+  { path: 'pagar', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
+  { path: 'home/v2.0/invoice/2870/download/70514', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
   {
     path: 'saldo',
     loadChildren: () => import('./pages/billing/billing.module').then( m => m.BillingPageModule)
@@ -31,6 +33,50 @@ const routes: Routes = [
   {
     path: 'componente/avatar',
     loadChildren: () => import('./pages/components/avatar/avatar.module').then( m => m.AvatarPageModule)
+  },
+  {
+    path: 'componente/buttons',
+    loadChildren: () => import('./pages/components/buttons/buttons.module').then( m => m.ButtonsPageModule)
+  },
+  {
+    path: 'componente/card',
+    loadChildren: () => import('./pages/components/card/card.module').then( m => m.CardPageModule)
+  },
+  {
+    path: 'componente/check',
+    loadChildren: () => import('./pages/components/check/check.module').then( m => m.CheckPageModule)
+  },
+  {
+    path: 'componente/date-time',
+    loadChildren: () => import('./pages/components/date-time/date-time.module').then( m => m.DateTimePageModule)
+  },
+  {
+    path: 'componente/fab',
+    loadChildren: () => import('./pages/components/fab/fab.module').then( m => m.FabPageModule)
+  },
+  {
+    path: 'componente/grid',
+    loadChildren: () => import('./pages/components/grid/grid.module').then( m => m.GridPageModule)
+  },
+  {
+    path: 'componente/infinite-scroll',
+    loadChildren: () => import('./pages/components/infinite-scroll/infinite-scroll.module').then( m => m.InfiniteScrollPageModule)
+  },
+  {
+    path: 'componente/inpunt',
+    loadChildren: () => import('./pages/components/inpunt/inpunt.module').then( m => m.InpuntPageModule)
+  },
+  {
+    path: 'componente/list',
+    loadChildren: () => import('./pages/components/list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'componente/list-reorder',
+    loadChildren: () => import('./pages/components/list-reorder/list-reorder.module').then( m => m.ListReorderPageModule)
+  },
+  {
+    path: 'componente/loading',
+    loadChildren: () => import('./pages/components/loading/loading.module').then( m => m.LoadingPageModule)
   },
 ];
 

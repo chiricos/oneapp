@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Menu } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -30,12 +32,10 @@ export class HomePage {
     },
   ];
 
-  constructor() {}
+  constructor(private menuController: MenuController) {}
 
-}
+  toggleMenu() {
+    this.menuController.toggle();
+  }
 
-interface Menu{
-  icon:string;
-  name:string;
-  redirectTo:string;
 }

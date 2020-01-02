@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "home",
+    "name": "5",
+    "redirectTo": "/home"
+  },
+  {
+    "icon": "home",
+    "name": "190",
+    "redirectTo": "/home"
+  },
+  {
+    "icon": "card",
+    "name": "Saldo principal",
+    "redirectTo": "/saldo"
+  },
+  {
+    "icon": "list-box",
+    "name": "Facturas",
+    "redirectTo": "/historial"
+  },
+  {
+    "icon": "chatbubbles",
+    "name": "Mensajes",
+    "redirectTo": "/mensajes"
+  },
+  {
+    "icon": "keypad",
+    "name": "Componentes",
+    "redirectTo": "/componente/inicio"
+  }
+]

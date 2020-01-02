@@ -12,9 +12,11 @@
             <ion-label *ngIf="item.value && !item.formattedValue">{{item.label}}: {{item.value}}</ion-label>
           </ion-item>
         </ion-list>
-        <ion-list *ngFor="let config of convertToArray(balance.config)">
-            <ion-button color="secondary" (click)='getUrl(config);'>Descargar</ion-button>
+
+        <ion-list *ngFor="let c of config;" class="padding-top">
+          <ion-button *ngIf="c.show"  expand="full" routerLink="{{c.url}}">{{c.label || 'Descargar'}}</ion-button>
         </ion-list>
     </ion-card-content>
   </ion-card>
+
 </ion-content>
