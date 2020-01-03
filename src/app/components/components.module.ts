@@ -4,16 +4,19 @@ import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MenuComponent,
+    AvatarSelectorComponent,
   ],
   exports: [
     HeaderComponent,
     MenuComponent,
+    AvatarSelectorComponent,
   ],
   imports: [
     CommonModule,

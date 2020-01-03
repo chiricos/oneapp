@@ -1,5 +1,7 @@
 {
   "name": "oneappNi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

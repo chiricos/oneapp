@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { UsuarioGuard } from './guars/usuario.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { 
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canLoad: [ UsuarioGuard ]
+  },
   { path: 'pagar', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
   { path: 'home/v2.0/invoice/2870/download/70514', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
   {
@@ -77,6 +82,10 @@ const routes: Routes = [
   {
     path: 'componente/loading',
     loadChildren: () => import('./pages/components/loading/loading.module').then( m => m.LoadingPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
 ];
 
